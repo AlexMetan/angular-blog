@@ -1,0 +1,13 @@
+<app-navbar></app-navbar>
+<app-banner [imgName]="'banner.jpg'"></app-banner>
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12" data-aos="zoom-in">
+                <h2>{{post.title}}</h2>
+                <div #textArea></div>
+                <p>{{post.author}} <span>{{post.date}}</span></p>
+            </div>
+        </div>
+    </div>
+</section>

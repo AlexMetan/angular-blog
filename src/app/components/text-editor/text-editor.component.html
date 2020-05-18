@@ -1,0 +1,16 @@
+
+<div class="row">
+    <div class="col-md-6">
+        <input type="button" (click)="textStyle('bold')" value="B" class="editor-btn bold">
+        <input type="button" (click)="textStyle('italic')" value="I" class="editor-btn italic">
+        <input type="button" (click)="textStyle('underline')" value="U" class="editor-btn underLine">
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">          
+        <div id='editor' contenteditable #editor >
+            
+        </div>
+    </div>
+</div>
+

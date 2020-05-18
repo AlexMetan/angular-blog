@@ -1,0 +1,31 @@
+<app-navbar></app-navbar>
+<app-banner [imgName]="'banner.jpg'"></app-banner>
+<section *ngIf="loaded" data-aos="zoom-in">
+    <div class="container" >
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Title</h3>
+                <input  type="text"[(ngModel)]="postTitle" >
+                <h3>Text</h3>
+                <app-text-editor [text]="postText" #editor></app-text-editor>
+            </div>
+            <div class="col-md-6">
+                <div class="error" *ngIf="nullFields"><span>Fields cannot be null</span></div>  
+            </div>
+           
+        </div>
+        <div class="row">
+            <div class="col-lg-2 col-md-4 col-6">
+                <div class="colorBtnBlock" (click)="updatePost(editor)">Update</div>                
+            </div>
+           
+            <div class="col-lg-2 col-md-4 col-6">
+                <div class="colorBtnBlock" (click)="deletePost()">Delete</div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- loading -->
+<section id="loading" *ngIf="!loaded">
+    <img src="../.././assets/img/loader.svg" >
+</section>

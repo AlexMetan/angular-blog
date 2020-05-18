@@ -1,0 +1,18 @@
+<div class="row"  *ngIf="havePost" >
+    <div class="col-lg-4 col-md-6"  *ngFor="let post of filteredPost" data-aos="zoom-in">
+        <div class="blog">
+            <h6>{{post.title}}</h6>
+            <div class="img-bg" [ngStyle]="{'background-image': 'url(' + post.img_link + ')'}"></div>
+            <div class="blog-text" >{{post.text | noHTML | trimWords:100}}</div>
+            <p class="author"><i class="fas fa-user"></i>{{post.author}}<span><i class="far fa-calendar-alt"></i>{{post.date}}</span></p>
+            <a class="blog-btn" routerLink="/post" [queryParams]="{ id: post.id }">More</a>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12 " *ngIf="!havePost">
+        <div class="blog-container">
+            <p>No post found</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,140 @@
+/* You can add global styles to this file, and also import other style files */
+a:hover{text-decoration: none;}
+section{padding-top: 60px;padding-bottom: 60px;}
+h2{position: relative;text-align: center;text-transform: uppercase;}
+h3{text-align: center;}
+h2::after{
+    position: relative;
+    content: '';
+    display: block;
+    margin:20px auto;
+    width: 50px;
+    height: 4px;
+    background: #00a397;
+}
+*:focus,button:focus,input:focus{outline: none;}
+select,input,textarea,#editor{
+    width: 100%;
+    border: 1px solid  #ccc;
+    border-radius:5px;
+    padding: 5px;
+    margin: 15px 0;
+}
+textarea{
+    height: 230px;
+    resize:none;
+}
+input[type="submit"]{
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #00a397;    
+    color:#fff!important;
+    margin-top: 20px;
+}
+.bg{
+    background-size: cover!important;
+    background-position: center!important;
+    background-repeat: no-repeat!important;
+}
+.inputs{padding: 20px 30px;}
+
+.error{background: none;}
+.error span{
+    text-align: center;
+    background: #f75353;
+    color: #fff;
+    padding: 7px;
+    display: block;
+    border-radius: 5px;
+    font-size: 13px;
+} 
+div.error+div.error{
+    margin-top: 20px;
+}
+/* BLOG POST */
+.img-bg{
+    width: 100;
+    height: 200px;
+    background-position: center!important;
+    background-size: cover!important;
+    margin:20px 0;
+}
+.blog{
+    background: #ffffff;
+    padding: 30px;
+    box-shadow: 0px 6px 24px -9px rgba(0,0,0,0.75);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.author{font-style: italic;}
+.author span{float: right;}
+.blog-btn{
+    border: 2px solid #00a397;
+    color: #00a397;
+    padding: 7px 30px;
+    margin-top: 20px;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    transition: 0.5s;
+}
+.blog-btn::after{
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    width: 0%;
+    height: 100%;
+    background-color: #00a397;
+    transition: 0.5s;
+    z-index: -1;
+}
+.blog-btn:hover::after{
+    width: 100%;
+    transition: 0.5s;
+}
+.blog-btn:hover{
+    color: #fff;
+    transition: 0.5s;
+    text-decoration: none;
+}
+.blog-container{min-height: 250px;display: flex;align-items: center;justify-content: center;}
+.blog-container p{
+    font-size: 30px;
+    text-transform: uppercase;
+}
+.blog-text{min-height: 80px;}
+/* btn ***
+**********
+***********/
+.colorBtnBlock{
+    display: block;
+    width: 100%;
+    padding: 10px 20px;
+    background-color: #00a397;
+    color: #fff;
+    margin-top: 20px;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    width: 100;
+    border: none;
+}
+button:disabled,input:disabled{
+    background-color: #5a5a5a;
+    cursor: not-allowed;
+    border-color: #5a5a5a!important;
+}
+/* loader */
+#loading{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+   
+}
+#loading img{
+    width: 20%;
+    height: 20%;
+    margin: auto;
+}

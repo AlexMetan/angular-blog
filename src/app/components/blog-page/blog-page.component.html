@@ -1,0 +1,22 @@
+<app-navbar></app-navbar>
+<app-banner [imgName]="'banner.jpg'"></app-banner>
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12" data-aos="zoom-in">
+                <h2>BLOG</h2>
+            </div> 
+        </div>
+        <div class="row justify-content-center" >
+            <div class="col-md-2" data-aos="zoom-in">
+                <select  [(ngModel)]="selectedType" (ngModelChange)="clearInput()" >
+                    <option *ngFor="let option of optionParams" [value]="option.type">{{option.label}}</option>
+                </select>
+            </div>
+            <div class="col-md-4" data-aos="zoom-in">
+                <input type="text" placeholder='{{selectedType}}' [(ngModel)]="filterParam" (ngModelChange)="filter.filterArray(filterParam,selectedType)">
+            </div>
+        </div>
+        <app-blog-post #filter ></app-blog-post>
+    </div>
+</section>

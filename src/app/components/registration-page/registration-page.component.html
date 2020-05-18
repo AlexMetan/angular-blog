@@ -1,0 +1,36 @@
+<app-navbar></app-navbar>
+<app-banner [imgName]="'banner1.jpg'"></app-banner>
+<section>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6" data-aos="zoom-in">
+                <form (ngSubmit)="onSubmit(registerForm)" [formGroup]="registerForm">
+                    <div class="label"><h5>REGISTER</h5></div>
+                    <div class="inputs">
+                        <input type="text" placeholder="Login" formControlName="login" (click)="hideError()">
+                        <div *ngIf="registerForm.get('login').invalid&&registerForm.get('login').touched" class="error" >
+                            <span 
+                                *ngIf="registerForm.get('login')['errors']['required']">
+                                The field cannot be empty
+                            </span>                            
+                        </div>
+                        <div class="error" >
+                            <span *ngIf="this.userExist">
+                                Name is already taken
+                            </span>
+                        </div>
+                        <input type="password" placeholder="Password" formControlName="password">
+                        <div *ngIf="registerForm.get('password').invalid&&registerForm.get('password').touched" class="error" >
+                            <span 
+                            *ngIf="registerForm.get('password')['errors']['minlength']">
+                                Password cannot be less than {{registerForm.get('password')['errors']['minlength']['requiredLength']}} characters
+                            </span>                            
+                        </div>
+                        <input type="submit" value="CREATE ACCOUNT" [disabled]="registerForm.invalid">
+                        <p class="text-center old-user">Already have an account? <a routerLink="/sign-in">SIGN-IN</a></p>
+                    </div>
+                </form>                
+            </div>
+        </div>
+    </div>
+</section>

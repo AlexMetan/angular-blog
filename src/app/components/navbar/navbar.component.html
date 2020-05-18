@@ -1,0 +1,43 @@
+<nav class="pc-menu">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-2"><img src="../.././assets/img/logo.png"></div>
+            <div class="col-md-8 menu">
+                <a routerLink=''>BLOG</a>
+                <a routerLink='/add-post'>ADD POST</a>
+                <a routerLink='/edit-post'>EDIT POST</a>
+                <a routerLink='/sign-in' *ngIf="!user">SIGN IN</a>
+                <a routerLink='/sign-up' *ngIf="!user">SIGN UP</a>
+                
+            </div>
+            <div class="col-md-2">
+                <div class="user" *ngIf="user"><i class="fas fa-user"></i>{{user}}<i class="fas fa-sign-out-alt logout" (click)="logOut()"></i></div>
+            </div>
+        </div>
+    </div>
+</nav>
+<nav class="mobile-menu container-fluid">
+    <div class="row">
+        <div class="col-4">
+            <img src="./../assets/img/logo.png">
+        </div>
+        <div class="col-6">
+            <div class="user" *ngIf="user"><i class="fas fa-user"></i>{{user}}<i class="fas fa-sign-out-alt logout" (click)="logOut()"></i></div>
+        </div>
+        <div class="col-2 align-center">
+            <div (click)="mobileMenuBtnClick()" class="menu-btn">
+                <i class="fas fa-bars" *ngIf="!menuOpened"></i>
+                <i class="far fa-window-close" *ngIf="menuOpened;"></i>
+            </div>
+        </div>
+        <div class="menu-section">
+            <div class="menu-item">
+                <a routerLink=''>BLOG</a>
+                <a routerLink='/add-post'>ADD POST</a>
+                <a routerLink='/edit-post'>EDIT POST</a>
+                <a routerLink='/sign-in' *ngIf="!user">SIGN IN</a>
+                <a routerLink='/sign-up' *ngIf="!user">SIGN UP</a>
+            </div>
+        </div>
+    </div>
+</nav>

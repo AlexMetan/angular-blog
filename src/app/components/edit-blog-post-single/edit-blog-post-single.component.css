@@ -1,0 +1,11 @@
+.colorBtnBlock{
+    display: block;
+    padding: 10px 20px;
+    background-color: #00a397;
+    color: #fff;
+    margin-top: 20px;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+}
+input {padding: 5px 15px;}
